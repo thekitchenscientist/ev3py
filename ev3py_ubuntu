@@ -4,6 +4,7 @@ interact with LEGO Mindstorms EV3 bricks.
 
 Tested on: 
 - OS X 10.9.3 with Python 2.7.6
+- Ubuntu 14.01 with Python 2.7.6
 
 To do:
 - all other EV3 commands! (only a couple are implemented here)
@@ -15,6 +16,7 @@ To do:
 - Windows support
 
 Author: Thiago Marzagao (tmarzagao at gmail dot com)
+Ubuntu support added by Stephen Pearson (thekitchenscientist at gmail dot com)
 
 See firmware source code (https://github.com/mindboards/ev3sources) for 
 info on the data types and opcodes used here.
@@ -396,7 +398,7 @@ class ev3:
         #set message size, message counter, command type, vars
         comm_0 = '\x08\x00\x00\x00\x80\x00\x00'
         
-        #opUI_write
+        #opUI_write CMD:LED
         comm_1 = '\x82' + '\x1B' + h[pattern]
         
         # assemble command and send to EV3
